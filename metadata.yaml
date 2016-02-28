@@ -1,0 +1,26 @@
+_repo: Four-Months-in-a-Sneak-Box-A-Boat-Voyage-of-2600-Miles-Down-the-Ohio-and-Mississippi-Rivers-an__5686
+creator:
+  author:
+    agent_name: Bishop, Nathaniel H. (Nathaniel Holmes)
+    alias: Bishop, Nathaniel Holmes
+    birthdate: 1837
+    deathdate: 1902
+    gutenberg_agent_id: '532'
+    url: http://www.gutenberg.org/2009/agents/532
+description: ''
+gutenberg_issued: '2004-05-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '5686'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Ohio River -- Description and travel'
+- !lcc 'F350.5'
+- !lcsh 'Mississippi River -- Description and travel'
+- !lcsh 'Boats and boating'
+title: "Four Months in a Sneak-Box\r\nA Boat Voyage of 2600 Miles Down the Ohio and\
+  \ Mississippi Rivers, and Along the Gulf of Mexico"
+url: http://www.gutenberg.org/ebooks/5686
