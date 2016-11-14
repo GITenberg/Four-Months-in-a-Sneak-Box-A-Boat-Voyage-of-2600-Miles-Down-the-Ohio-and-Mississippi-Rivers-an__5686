@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: GO429Vk1z/FI3rE9vjZz/6kjCHHSwAT7bhXFq+H5Lr53t6Gb7o5tgj4zlBmHns9hqOmZucW/nIJA+RXJHjbpUoLqapbfo3Dyv87nK2vC3ZhLcLzcAJ6hH8zu6a72ekHfAuqDGQ4EKo7DP2q3zKcP5vk59iyvhZFoxJjZZAEs2haUDC6Xo/4TL513GWUgF7vH5d6Iy5VW31//KO/o5GEa2X0urPIbkqLmbtIFu2nj3yxM0ybmmaZtdSCIUH0KF5C/ccCNLVyYtSprJsuQaKV61pUVzTRe0VTc1SaDGvbZSzBP69pJuT78/DDzVFCdibUAlZ5tQAB2gfdbjh7CfHF4gFyHug/gWe7vR38lGXzuv/u3j01TYunFtxWCLWaB9G1YnZ4+vNdV0BH51QiCv8cP6Fkh3yAuVEC5ze9L55ge5zK5XTleopGFNX4lVw95vMX7OLbhWfQuTwq0fn3sJ17pWddoYv1PPjMLjLescem+baxxu166Rmv7+hU4i8ABTXQsmz7icqA1OtUJs3LYhTvIgI+RUQ+A4U5i33Qn8L1n6W3POiUhHcLyw7AbckwxqhQsqnEgkiVK7aVJlz3M3J7HUCH4w0xqTVvYVcis4q1W1mfuXoJOc9czmYS+mdLakvyD5lmuVF1nrPqcX06u33oEA7cM97hKS3nibm39SDWSzdo=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Four-Months-in-a-Sneak-Box-A-Boat-Voyage-of-2600-Miles-Down-the-Ohio-and-Mississippi-Rivers-an__5686
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
