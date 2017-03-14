@@ -1,5 +1,8 @@
 _repo: Four-Months-in-a-Sneak-Box-A-Boat-Voyage-of-2600-Miles-Down-the-Ohio-and-Mississippi-Rivers-an__5686
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Bishop, Nathaniel H. (Nathaniel Holmes)
@@ -9,6 +12,8 @@ creator:
     gutenberg_agent_id: '532'
     url: http://www.gutenberg.org/2009/agents/532
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/5686#Four-Months-in-a-Sneak-Box-A-Boat-Voyage-of-2600-Miles-Down-the-Ohio-and-Mississippi-Rivers-an_
 gutenberg_issued: '2004-05-01'
 gutenberg_type: Text
 identifiers:
