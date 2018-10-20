@@ -1,5 +1,5 @@
 _repo: Four-Months-in-a-Sneak-Box-A-Boat-Voyage-of-2600-Miles-Down-the-Ohio-and-Mississippi-Rivers-an__5686
-_version: 0.2.0
+_version: 0.2.1
 covers:
 - cover_type: generated
   image_path: cover.png
@@ -27,6 +27,7 @@ subjects:
 - !lcc 'F350.5'
 - !lcsh 'Mississippi River -- Description and travel'
 - !lcsh 'Boats and boating'
+- GITenberg
 title: "Four Months in a Sneak-Box\r\nA Boat Voyage of 2600 Miles Down the Ohio and\
   \ Mississippi Rivers, and Along the Gulf of Mexico"
 url: http://www.gutenberg.org/ebooks/5686
